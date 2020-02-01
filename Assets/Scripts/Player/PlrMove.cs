@@ -116,8 +116,10 @@ namespace Player {
             }
 
             //Decay speed when not pushing an input button
-            if(inputVector.x == 0) {  moveVector.x *= 1 - speedDecay; }
-            if(inputVector.z == 0) { moveVector.z *= 1 - speedDecay; }
+            if(charControl.isGrounded) {
+                if(inputVector.x == 0) { moveVector.x *= 1 - speedDecay; }
+                if(inputVector.z == 0) { moveVector.z *= 1 - speedDecay; }
+            }
             
             newMove += transform.right * moveVector.x;
             newMove += transform.up * jumpVector;
