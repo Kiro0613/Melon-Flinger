@@ -14,11 +14,10 @@ namespace Player {
         public ILogger logger = Debug.unityLogger;
         
         // Start is called before the first frame update
-        void Start() {
+        void Awake() {
             Cam = GetComponentInChildren<Camera>();
             Move = GetComponent<PlrMove>();
             Use = GetComponent<PlrUse>();
-
         }
 
         // Update is called once per frame

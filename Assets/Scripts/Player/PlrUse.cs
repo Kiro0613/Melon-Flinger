@@ -22,9 +22,12 @@ namespace Player {
 
         public bool infiniteMelons = false;
 
+        private void Awake() {
+            player = GetComponent<Player>();
+        }
+
         // Start is called before the first frame update
         void Start() {
-            player = GetComponent<Player>();
             inv = GameObject.FindGameObjectWithTag("Inv");
             melonBase = GameObject.Find("WatermelonProto");
         }

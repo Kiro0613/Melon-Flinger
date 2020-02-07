@@ -70,10 +70,14 @@ namespace Player {
 
         CharacterController charControl;
 
-        // Start is called before the first frame update
-        void Start() {
+        private void Awake() {
             charControl = GetComponent<CharacterController>();
             standingHeight = transform.localScale.y;
+        }
+
+        // Start is called before the first frame update
+        void Start() {
+
         }
 
         // Update is called once per frame

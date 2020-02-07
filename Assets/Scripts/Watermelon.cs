@@ -14,11 +14,15 @@ public class Watermelon : MonoBehaviour {
 
     public bool doDecay = true;
     public float decayTime = 5000f;
+    
+    private void Awake() {
+        body = GetComponent<Rigidbody>();
+    }
 
-    // Start is called before the first frame update
     void Start() {
         player = GameObject.FindWithTag("Player").GetComponent<Player.Player>();
-        body = GetComponent<Rigidbody>();
+
+        Throw(gameObject, 0);
     }
 
     // Update is called once per frame
@@ -39,7 +43,8 @@ public class Watermelon : MonoBehaviour {
         ));
         body.velocity = transform.right * (force + Random.Range(speedVariance*-1, speedVariance)) * -1;
 
-        player.log("Melon speed: " + body.velocity.magnitude);
+        //Layer 9 = Melon
+        gameObject.layer = 9;
 
         body.isKinematic = disableMovement;
     }

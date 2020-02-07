@@ -19,11 +19,11 @@ public class PlrCam : MonoBehaviour {
 
     private void Awake() {
         Cursor.lockState = CursorLockMode.Locked;
+        verticalMinMax = new Vector2(-85f, 85f);
     }
 
     // Start is called before the first frame update
     void Start() {
-        verticalMinMax = new Vector2(-85f, 85f);
         plrCam = GetComponentInChildren<Camera>();
     }
 
